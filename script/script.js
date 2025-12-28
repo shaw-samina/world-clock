@@ -15,3 +15,25 @@ setInterval(function () {
   sydDate.innerHTML = moment().format("MMMM Do, YYYY");
   sydTime.innerHTML = sydTz.format("h:mm:ss [<small>]a[<small>]");
 }, 1000);
+
+function displaySelectedCity(event) {
+  let currentCity = event.target.value;
+  let cityName = currentCity.replace("_", "").split("/")[1];
+  let cityTime = moment().tz(currentCity);
+  let listedCities = document.querySelector("#listed-cities");
+  listedCities.innerHTML = `
+   <div class="city-list">
+          <div>
+            <h2>${cityName}</h2>
+            <div class="date">${cityTime.format("MMMM Do, YYYY")}</div>
+          </div>
+          <div>
+            <div class="time">${cityTime.format(
+              "h:mm:s [<small>] a [<small>]"
+            )}</div>
+          </div>
+        </div>`;
+}
+
+let selectedCity = document.querySelector("#city");
+selectedCity.addEventListener("change", displaySelectedCity);

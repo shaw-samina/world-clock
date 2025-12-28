@@ -16,6 +16,10 @@ select {
   padding: 10px;
   border-radius: 3px;
 }
+select:focus {
+  outline: none;
+  border-color: #e366ba;
+}
 
 .container {
   max-width: 550px;
@@ -27,6 +31,11 @@ select {
   box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
     rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
     rgba(240, 46, 170, 0.05) 25px 25px;
+}
+.cities {
+  color: #e366ba;
+  border: 3px solid rgb(197, 143, 176);
+  border-radius: 4px;
 }
 
 .city-list {

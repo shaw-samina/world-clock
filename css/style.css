@@ -75,3 +75,9 @@ footer {
 .github {
   color: rgb(232, 208, 217);
 }
+
+a[href="/"] {
+  color: #aa3a85;
+  font-weight: 800;
+  font-family: "Orbitron", sans-serif;
+}

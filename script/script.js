@@ -16,26 +16,35 @@ setInterval(function () {
   sydTime.innerHTML = sydTz.format("h:mm:ss [<small>]a[<small>]");
 }, 1000);
 
+setInterval(function () {
+  let mexicoCity = document.querySelector("#mexico-city");
+  let mexDate = document.querySelector("#mexico-city .date");
+  let mexTime = document.querySelector("#mexico-city .time");
+  let mexTz = moment().tz("America/Mexico_City");
+  mexDate.innerHTML = moment().format("MMMM Do, YYYY");
+  mexTime.innerHTML = mexTz.format("h:mm:ss [<small>]a[<small>]");
+}, 1000);
+
 function displaySelectedCity(event) {
   let currentCity = event.target.value;
   if (currentCity === "current") {
     currentCity = moment.tz.guess();
   }
-  let cityName = currentCity.replace("_", "").split("/")[1];
+  let cityName = currentCity.replace("_", " ").split("/")[1];
   let cityTime = moment().tz(currentCity);
   let listedCities = document.querySelector("#listed-cities");
   listedCities.innerHTML = `
    <div class="city-list">
           <div>
             <h2>${cityName}</h2>
-            <div class="date">${cityTime.format("MMMM Do, YYYY")}</div>
-          </div>
-          <div>
-            <div class="time">${cityTime.format(
-              "h:mm:ss [<small>] a [<small>]"
-            )}</div>
-          </div>
-        </div>`;
+      <div class="date">${cityTime.format("MMMM	Do YYYY")}</div>
+    </div>
+    <div class="time">${cityTime.format("h:mm:ss")} <small>${cityTime.format(
+    "A"
+  )}</small></div>
+  </div>
+  <a href="/">Back to City List</a>
+  `;
 }
 
 let selectedCity = document.querySelector("#city");

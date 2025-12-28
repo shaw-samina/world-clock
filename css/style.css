@@ -1,6 +1,7 @@
 body {
   color: rgb(212, 30, 155);
   background-color: pink;
+  background-image: linear-gradient(90deg, #fadadd 22%, #ce99a2 74%);
 }
 h1 {
   text-align: center;
@@ -33,7 +34,8 @@ select:focus {
     rgba(240, 46, 170, 0.05) 25px 25px;
 }
 .cities {
-  color: #e366ba;
+  color: #e818a3;
+  background-color: rgb(232, 208, 217);
   border: 3px solid rgb(197, 143, 176);
   border-radius: 4px;
 }
@@ -67,8 +69,8 @@ h2 {
 }
 footer {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 60px;
 }
 .github {
-  color: rgb(225, 82, 161);
+  color: rgb(232, 208, 217);
 }

@@ -18,6 +18,9 @@ setInterval(function () {
 
 function displaySelectedCity(event) {
   let currentCity = event.target.value;
+  if (currentCity === "current") {
+    currentCity = moment.tz.guess();
+  }
   let cityName = currentCity.replace("_", "").split("/")[1];
   let cityTime = moment().tz(currentCity);
   let listedCities = document.querySelector("#listed-cities");
@@ -29,7 +32,7 @@ function displaySelectedCity(event) {
           </div>
           <div>
             <div class="time">${cityTime.format(
-              "h:mm:s [<small>] a [<small>]"
+              "h:mm:ss [<small>] a [<small>]"
             )}</div>
           </div>
         </div>`;
